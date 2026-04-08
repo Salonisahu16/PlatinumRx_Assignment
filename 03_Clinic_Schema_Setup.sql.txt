@@ -1,0 +1,51 @@
+CREATE TABLE clinics (
+    cid TEXT,
+    clinic_name TEXT,
+    city TEXT,
+    state TEXT,
+    country TEXT
+);
+
+CREATE TABLE customer (
+    uid TEXT,
+    name TEXT,
+    mobile TEXT
+);
+
+CREATE TABLE clinic_sales (
+    oid TEXT,
+    uid TEXT,
+    cid TEXT,
+    amount INTEGER,
+    datetime TEXT,
+    sales_channel TEXT
+);
+
+CREATE TABLE expenses (
+    eid TEXT,
+    cid TEXT,
+    description TEXT,
+    amount INTEGER,
+    datetime TEXT
+);
+INSERT INTO clinics VALUES 
+('C1','Clinic A','Indore','MP','India'),
+('C2','Clinic B','Bhopal','MP','India'),
+('C3','Clinic C','Indore','MP','India');
+
+INSERT INTO customer VALUES 
+('U1','John','9999999999'),
+('U2','Alice','8888888888'),
+('U3','Bob','7777777777');
+
+INSERT INTO clinic_sales VALUES 
+('O1','U1','C1',5000,'2021-01-10','Online'),
+('O2','U2','C1',3000,'2021-01-15','Offline'),
+('O3','U3','C2',7000,'2021-01-20','Online'),
+('O4','U1','C3',2000,'2021-01-25','Offline');
+
+INSERT INTO expenses VALUES 
+('E1','C1','Medicine',2000,'2021-01-12'),
+('E2','C1','Rent',1000,'2021-01-20'),
+('E3','C2','Staff',3000,'2021-01-15'),
+('E4','C3','Maintenance',500,'2021-01-18');
